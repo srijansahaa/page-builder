@@ -1,9 +1,12 @@
-import './App.css';
+import "./App.css";
+import Canvas from "./components/Canvas";
+import Sidebar from "./components/Sidebar";
 
 function App() {
   return (
     <div>
-      Page Builder
+      <Canvas />
+      <Sidebar />
     </div>
   );
 }
