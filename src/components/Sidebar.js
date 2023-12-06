@@ -25,29 +25,31 @@ const Sidebar = () => {
     <div className="sidebar">
       <div>
         <h1>BLOCKS</h1>
-        <div
-          className="sidebarElements"
-          draggable
-          onDragStart={(e) => handleDragStart(e, "input")}
-        >
-          <img src={dragIcon} alt="drag-icon" width={11} height={18} />
-          Input
-        </div>
-        <div
-          className="sidebarElements"
-          draggable
-          onDragStart={(e) => handleDragStart(e, "label")}
-        >
-          <img src={dragIcon} alt="drag-icon" width={11} height={18} />
-          Label
-        </div>
-        <div
-          className="sidebarElements"
-          draggable
-          onDragStart={(e) => handleDragStart(e, "button")}
-        >
-          <img src={dragIcon} alt="drag-icon" width={11} height={18} />
-          Button
+        <div className="sidebarElementsWrapper">
+          <div
+            className="sidebarElements"
+            draggable
+            onDragStart={(e) => handleDragStart(e, "input")}
+          >
+            <img src={dragIcon} alt="drag-icon" width={11} height={18} />
+            Input
+          </div>
+          <div
+            className="sidebarElements"
+            draggable
+            onDragStart={(e) => handleDragStart(e, "label")}
+          >
+            <img src={dragIcon} alt="drag-icon" width={11} height={18} />
+            Label
+          </div>
+          <div
+            className="sidebarElements"
+            draggable
+            onDragStart={(e) => handleDragStart(e, "button")}
+          >
+            <img src={dragIcon} alt="drag-icon" width={11} height={18} />
+            Button
+          </div>
         </div>
       </div>
 
