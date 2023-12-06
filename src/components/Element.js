@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import ConfigurationModal from "./ConfigurationModal";
 
 const Element = ({
@@ -14,6 +14,29 @@ const Element = ({
   setActiveElement,
   onDelete,
 }) => {
+  const [isDragging, setDragging] = useState(false);
+  const [position, setPosition] = useState({ x, y });
+
+  const handleMouseDown = (e) => {
+    setDragging(true);
+  };
+
+  const handleMouseMove = useCallback(
+    (e) => {
+      if (isDragging) {
+        setPosition({ x: e.clientX, y: e.clientY });
+      }
+    },
+    [isDragging]
+  );
+
+  const handleMouseUp = useCallback(() => {
+    if (isDragging) {
+      setDragging(false);
+      onSaveConfig(id, { x: position.x, y: position.y });
+    }
+  }, [isDragging, id, onSaveConfig, position]);
+
   const handleElementClick = () => {
     setActiveElement(id);
   };
@@ -23,10 +46,21 @@ const Element = ({
     setActiveElement(null);
   };
 
+  useEffect(() => {
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseup", handleMouseUp);
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, [isDragging, handleMouseUp, handleMouseMove]);
+
   return (
     <>
       <div
         className="elementWrapper"
+        onMouseDown={handleMouseDown}
         onKeyDown={(e) =>
           e.key === "Enter"
             ? handleElementClick()
@@ -60,7 +94,7 @@ const Element = ({
                     fontSize: fontSize + "px",
                     fontWeight: fontWeight,
                   }}
-                  tabIndex={id.toString()}
+                  tabIndex={0}
                 >
                   {text}
                 </label>

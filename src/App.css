@@ -13,6 +13,9 @@
 .customButton:hover,
 .customButton:active {
   border: 2px solid #d95409;
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
 }
 
 .customInput {

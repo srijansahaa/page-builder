@@ -51,9 +51,9 @@ const Canvas = () => {
       onDragOver={(e) => e.preventDefault()}
       onDrop={handleDrop}
     >
-      {elements.map((element) => (
+      {elements.map((element, index) => (
         <Element
-          key={element.id}
+          key={index.toString()}
           {...element}
           onSaveConfig={handleSaveConfig}
           isActive={element.id === activeElement}
