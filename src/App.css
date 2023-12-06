@@ -110,6 +110,7 @@
 }
 
 .configModal {
+  font-family: "Objektiv Mk3 W03 Bold", "Open Sans", sans-serif;
   width: 100%;
   max-width: 426px;
   background-color: #fff;
@@ -137,4 +138,39 @@
   padding: 8px;
   color: #fff;
   border: none;
+  font-family: "Objektiv Mk3 W03 Bold", "Open Sans", sans-serif;
+}
+
+@media screen and (max-width: 992px) {
+  .sidebar {
+    max-width: 30%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .customInput {
+    width: 120px;
+  }
+  .sidebar {
+    max-width: unset;
+    max-height: 164px;
+    overflow-y: scroll;
+    top: unset;
+    bottom: 0;
+    padding: 8px;
+    right: unset;
+  }
+
+  .sidebarElementsWrapper {
+    display: flex;
+    gap: 8px;
+  }
+
+  .sidebar .exportButton {
+    align-self: flex-start;
+  }
+
+  .configModal {
+    width: 80%;
+  }
 }
