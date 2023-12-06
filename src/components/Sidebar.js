@@ -30,7 +30,7 @@ const Sidebar = () => {
           draggable
           onDragStart={(e) => handleDragStart(e, "input")}
         >
-          <img src={dragIcon} alt="drag-icon" />
+          <img src={dragIcon} alt="drag-icon" width={11} height={18} />
           Input
         </div>
         <div
@@ -38,7 +38,7 @@ const Sidebar = () => {
           draggable
           onDragStart={(e) => handleDragStart(e, "label")}
         >
-          <img src={dragIcon} alt="drag-icon" />
+          <img src={dragIcon} alt="drag-icon" width={11} height={18} />
           Label
         </div>
         <div
@@ -46,12 +46,16 @@ const Sidebar = () => {
           draggable
           onDragStart={(e) => handleDragStart(e, "button")}
         >
-          <img src={dragIcon} alt="drag-icon" />
+          <img src={dragIcon} alt="drag-icon" width={11} height={18} />
           Button
         </div>
       </div>
 
-      <button onClick={handleExport} className="exportButton">
+      <button
+        onClick={handleExport}
+        className="exportButton"
+        aria-label="Export Config"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="32"
