@@ -93,11 +93,18 @@
 }
 
 .sidebar .exportButton {
+  font-family: "Open Sans", sans-serif;
   background-color: transparent;
   border: 1px solid #2d2d2d;
   align-self: flex-end;
   border-radius: 4px;
   cursor: pointer;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  gap: 4px;
 }
 
 .sidebar .exportButton:hover {
