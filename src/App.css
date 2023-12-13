@@ -131,6 +131,8 @@
   background-color: #fff;
   margin: auto;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .configModal label input {
@@ -154,6 +156,9 @@
   color: #fff;
   border: none;
   font-family: "Objektiv Mk3 W03 Bold", "Open Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (max-width: 992px) {
@@ -186,4 +191,49 @@
   .configModal {
     width: 80%;
   }
+}
+
+.canvasActions {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.canvasActions button {
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  padding: 12px;
+  filter: drop-shadow(0px 0px 9px rgba(0, 0, 0, 0.25));
+  cursor: pointer;
+}
+
+.canvasActions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.sidebarActions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.configModal textarea {
+  font-size: 16px;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  width: 96% !important;
+  padding: 8px;
+  color: #595959;
+  line-height: 24px;
+}
+
+.validation {
+  color: red;
+  margin: 0;
+  font-size: 12px;
+  margin-top: 2px;
 }
