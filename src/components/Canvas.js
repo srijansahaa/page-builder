@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Element from "./Element";
 
 const Canvas = () => {
+  const localElements = localStorage.getItem("storedElements");
   const [elements, setElements] = useState(
     JSON.parse(localStorage.getItem("storedElements")) || []
   );
@@ -58,7 +59,7 @@ const Canvas = () => {
 
   useEffect(() => {
     setElements(JSON.parse(localStorage.getItem("storedElements")) || []);
-  }, [localStorage.getItem("storedElements")]);
+  }, [localElements]);
 
   return (
     <div
